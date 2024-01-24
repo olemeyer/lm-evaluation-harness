@@ -75,7 +75,7 @@ class SQuAD2(Task):
 
     def doc_to_text(self, doc):
         return (
-            "Title: "
+            "[INST] "
             + doc["title"]
             + "\n\n"
             + "Background: "
@@ -83,8 +83,7 @@ class SQuAD2(Task):
             + "\n\n"
             + "Question: "
             + doc["question"]
-            + "\n\n"
-            + "Answer:"
+            + "[/INST]"
         )
 
     def should_decontaminate(self):
